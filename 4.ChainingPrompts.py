@@ -491,4 +491,27 @@ def generate_output_string(data_list):
     return output_string 
 
 product_information_for_user_message_1 = generate_output_string(category_and_product_list)
-print(product_information_for_user_message_1)
+### print(product_information_for_user_message_1)
+
+system_message = f"""
+You are a customer service assistant for a \
+large electronic store. \
+Respond in a friendly and helpful tone, \
+with very concise answers. \
+Make sure to ask the user relevant follow up questions.
+"""
+user_message_1 = f"""
+tell me about the smartx pro phone and \
+the fotosnap camera, the dslr one. \
+Also tell me about your tvs"""
+messages =  [  
+{'role':'system',
+ 'content': system_message},   
+{'role':'user',
+ 'content': user_message_1},  
+{'role':'assistant',
+ 'content': f"""Relevant product information:\n\
+ {product_information_for_user_message_1}"""},   
+]
+final_response = get_completion_from_messages(messages)
+print(final_response)
