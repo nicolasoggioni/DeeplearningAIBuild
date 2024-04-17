@@ -46,7 +46,9 @@ Drinks: \
 coke 3.00, 2.00, 1.00 \
 sprite 3.00, 2.00, 1.00 \
 bottled water 5.00 \
-"""} ]  # accumulate messages
+"""} ]  
+
+# accumulate messages
 
 
 print("Hello! Welcome to our pizza restaurant! What can I get for you today?")
